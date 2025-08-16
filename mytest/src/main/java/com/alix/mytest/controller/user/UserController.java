@@ -52,11 +52,11 @@ public class UserController {
 		Map<String, Object> map = new HashMap<String, Object>();
 		try {
 //			List<User> allUserList = this.userService.findAll(User.class);
-//			List<User> userList = this.userService.query(uqv);
-			User u = this.userService.findById(5L, User.class);
-			u.setPassword("123456");
-			User user = this.userService.update(u);
-			this.userService.delete(user);
+			List<User> userList = this.userService.query(uqv);
+//			User u = this.userService.findById(5L, User.class);
+//			u.setPassword("123456");
+//			User user = this.userService.update(u);
+//			this.userService.delete(user);
 //			User user = new User();
 //			user.setLoginName("lisi");
 //			user.setPassword("222222");
@@ -65,7 +65,7 @@ public class UserController {
 //			user.setAddDate(new Date());
 //			this.userService.save(user);
 //			Long id = user.getId();
-			map.put("u", u);
+			map.put("userList", userList);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
